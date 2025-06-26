@@ -36,7 +36,7 @@ Features include:
 ### 1. Data Preprocessing
 - Converted all categorical variables to numerical.
 - Checked for and confirmed no missing values.
-- Used one-hot encoding for `furnishingstatus`.
+
 
 ### 2. Train-Test Split
 - Split the data into training (80%) and testing (20%) using `train_test_split`.
@@ -57,45 +57,44 @@ Features include:
 
 ---
 
-## Example Evaluation Results
+## Evaluation Results
 
-- MAE: Around 430000
-- MSE: Around 3.2e+11
-- RMSE: Around 565000
-- R² Score: ~0.89 (89% of the variance is explained by the model)
+- MAE: 970043.4039201637
+- MSE: 1754318687330.6633
+- RMSE: 1324506.9600914384
+- R² Score: 0.6529242642153185
 
 ---
 
 ## Coefficient Interpretation (Sample)
 
-Each coefficient shows the impact of a 1-unit increase in that feature on the house price:
+| Feature                           | Coefficient | Interpretation                                                           |
+| --------------------------------- | ----------- | ------------------------------------------------------------------------ |
+| `area`                            | 235.97      | For each additional square foot, price increases by approx ₹236          |
+| `bedrooms`                        | 76,778      | Each additional bedroom adds about ₹76,778 to the price                  |
+| `bathrooms`                       | 1,094,445   | Each additional bathroom increases price by over ₹1 million              |
+| `stories`                         | 407,477     | Each additional story/floor adds ₹4.07 lakh to the price                 |
+| `mainroad`                        | 367,920     | If the house is on a main road, price increases by approx ₹3.68 lakh     |
+| `guestroom`                       | 231,610     | Having a guest room adds ₹2.31 lakh                                      |
+| `basement`                        | 390,251     | Having a basement increases the price by ₹3.9 lakh                       |
+| `hotwaterheating`                 | 684,650     | Presence of hot water heating increases price by approx ₹6.85 lakh       |
+| `airconditioning`                 | 791,427     | Air conditioning adds about ₹7.91 lakh to the price                      |
+| `parking`                         | 224,842     | Each additional parking space adds ₹2.25 lakh                            |
+| `prefarea`                        | 629,891     | Preferred area increases price by ₹6.3 lakh                              |
+| `furnishingstatus_semi-furnished` | -126,882    | Semi-furnished houses are approx ₹1.27 lakh cheaper than fully furnished |
+| `furnishingstatus_unfurnished`    | -413,645    | Unfurnished houses are approx ₹4.13 lakh cheaper than fully furnished    |
 
-Example:
-- `area`: 120.5 → Each additional sq.ft increases price by ₹120.5
-- `bedrooms`: 25000 → Each bedroom adds ₹25,000 to the price
-
----
-
-## Interview Question Summaries
-
-1. **Linear Regression Assumptions**: Linearity, Independence, Homoscedasticity, Normality of residuals, No multicollinearity.
-2. **Coefficient Interpretation**: Change in target variable per unit change in feature.
-3. **R² Score**: Proportion of variance explained by the model.
-4. **MSE vs MAE**: MSE penalizes larger errors more; MAE is more robust to outliers.
-5. **Detecting Multicollinearity**: Use correlation matrix or Variance Inflation Factor (VIF).
-6. **Simple vs Multiple Regression**: One feature vs multiple features.
-7. **Can Linear Regression be used for classification?** No; use logistic regression instead.
-8. **What if assumptions are violated?** The model may give biased or misleading results.
 
 ---
+
 
 ## File Structure
 
 ```
 
-Task-3-Linear-Regression/
+Task-3/
 ├── Housing.csv
-├── linear\_regression.ipynb
+├── task3.ipynb
 ├── README.md
 
 ```
@@ -111,8 +110,9 @@ Task-3-Linear-Regression/
 pip install pandas numpy matplotlib seaborn scikit-learn
 
 ```
-3. Open `linear_regression.ipynb` in Jupyter Notebook or Google Colab.
-4. Run all cells step by step.
+3. Open `tes3.ipynb` in Jupyter Notebook or Google Colab.
+4. Upload housing.csv
+5. Run all cells step by step.
 
 ---
 
